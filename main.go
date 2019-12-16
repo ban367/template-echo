@@ -1,9 +1,11 @@
 package main
 
 import (
+	"net/http"
+	"os"
+
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"net/http"
 )
 
 func main() {
@@ -14,7 +16,12 @@ func main() {
 
 	initRoutes(e)
 
-	e.Logger.Fatal(e.Start(":8080"))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	e.Logger.Fatal(e.Start(":" + port))
 }
 
 func initRoutes(e *echo.Echo) {
