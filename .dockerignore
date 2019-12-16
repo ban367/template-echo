@@ -1,0 +1,16 @@
+.env
+.DS_Store
+.gcloudignore
+.gitignore
+.vscode/
+Makefile
+Dockerfile
+docker-compose.yml
+README.md
+
+# Git
+.git
+.gitignore
+
+# Go
+<path/

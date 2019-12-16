@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      target: build
+    volumes:
+      - ./:/go/src
+    command: realize start
+    ports:
+      - 8080:8080
